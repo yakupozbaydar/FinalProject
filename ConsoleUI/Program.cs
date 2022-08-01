@@ -7,7 +7,7 @@ Console.WriteLine("Hello, World!");
 
 ProductManager productManager = new ProductManager(new EfProductDal());
 
-foreach (var product in productManager.GetAll())
+foreach (var product in productManager.GetByUnitPrice(40,100))
 {
     Console.WriteLine(product.ProductName);
 

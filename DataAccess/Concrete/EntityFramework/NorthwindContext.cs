@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=yakup/sqlexpress;Database=ChessPlayerAPI;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=YAKUP\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;");
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories{ get; set; }
