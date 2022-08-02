@@ -65,3 +65,8 @@ C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Business.pdb
 C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Core.pdb
 C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\DataAccess.pdb
 C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Entities.pdb
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Autofac.dll
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\FluentValidation.dll
