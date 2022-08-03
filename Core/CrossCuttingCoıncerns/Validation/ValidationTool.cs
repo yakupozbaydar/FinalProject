@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Core.CrossCuttingCoıncerns.Validation
 {
+    //validation işlemini clean tutmak için
+    //tek tool ile çalırılır validator(product validator) ve obje alcak(product)
     public static class ValidationTool
     {
         public static void Validate(IValidator validator,object entity)

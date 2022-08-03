@@ -1,8 +1,10 @@
 ﻿using Business.Abstract;
+using Business.CCS;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingCoıncerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
@@ -17,32 +19,46 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
+    //entity managera kendisi hariç bir entity parametre gönderme
+    //ihtiyacın varsa servis gönder
     public class ProductManager : IProductService
     {
-        IProductDal _productDal; 
-        public ProductManager (IProductDal productDal)
+        IProductDal _productDal;
+        ICategoryService _categoryService;
+        public ProductManager(IProductDal productDal, ICategoryService categoryService)
         {
             _productDal = productDal;
+            _categoryService = categoryService;
         }
+
 
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            //business code
+
+            //business kodlarını ayrı fonksiyonlar halinde tut
+            //daha okunabilir
+            IResult result = BusinessRules.Run(CheckIfProductNameSame(product.ProductName),
+                CheckIfProductCountOfCategoryCorrect(product.ProductId),
+                CheckIfCatagoryCountValid());
+            if (result != null)
+            {
+                return result;
+            }
             _productDal.Add(product);
             return new SuccesResult(Messages.ProductAdded);
         }
 
         public IDataResult<List<Product>> GetAll()
         {
-            //iş kodları
+            //business kodları
             if (DateTime.Now.Hour == 9)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductListed);  
-            
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed);
+
         }
 
         public IDataResult<List<Product>> GetAllByCategoryID(int id)
@@ -52,7 +68,7 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetById(int productId)
         {
-            return new SuccessDataResult<Product> (_productDal.Get(p => p.ProductId == productId));
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
 
         public IDataResult<Product> GetByProductID(int productID)
@@ -60,14 +76,49 @@ namespace Business.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productID));
         }
 
-        public IDataResult<List<Product>>  GetByUnitPrice(decimal min, decimal max)
+        public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
         {
-            return new SuccessDataResult<List<Product>> (_productDal.GetAll(p=>p.UnitPrice>= min && p.UnitPrice<= max)); 
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));
         }
 
-        public IDataResult<List<ProductDetailDto>> GetProductDetails() 
+        public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
+        }
+        [ValidationAspect(typeof(ProductValidator))]
+        public IResult Update(Product product)
+        {
+            throw new NotImplementedException();
+        }
+        private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)
+        {
+            var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count();
+            if (result >= 10)
+            {
+                return new ErrorResult(Messages.ProductCountOfCategoryError);
+            }
+            return new SuccesResult();
+
+        }
+        private IResult CheckIfProductNameSame(string productName)
+        {
+            var result = _productDal.Get(p => p.ProductName == productName).Equals(true);
+            if (result)
+            {
+                return new ErrorResult(Messages.ProductNameAlreadyExists);
+            }
+            return new SuccesResult();
+        }
+        private IResult CheckIfCatagoryCountValid()
+        {
+
+            var result = _categoryService.GetAll();
+            if (result.Data.Count > 15)
+            {
+                return new ErrorResult(Messages.CategoryCountInvalid);
+
+            }
+            return new SuccesResult();
         }
     }
 }
