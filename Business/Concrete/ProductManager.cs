@@ -46,7 +46,7 @@ namespace Business.Concrete
                 return result;
             }
             _productDal.Add(product);
-            return new SuccesResult(Messages.ProductAdded);
+            return new SuccessResult(Messages.ProductAdded);
         }
 
         public IDataResult<List<Product>> GetAll()
@@ -97,7 +97,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.ProductCountOfCategoryError);
             }
-            return new SuccesResult();
+            return new SuccessResult();
 
         }
         private IResult CheckIfProductNameSame(string productName)
@@ -107,7 +107,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.ProductNameAlreadyExists);
             }
-            return new SuccesResult();
+            return new SuccessResult();
         }
         private IResult CheckIfCatagoryCountValid()
         {
@@ -118,7 +118,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CategoryCountInvalid);
 
             }
-            return new SuccesResult();
+            return new SuccessResult();
         }
     }
 }
