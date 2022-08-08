@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Security.Encryption
+namespace Core.Utilities.Security.Encryption
 {
     public class SigningCredentialsHelper
     {
-        public static SigningCredentials CreateSigningCredentials(SecurityKey securityKey)
+        public static SigningCredentials CreateSigningCredentials(SecurityKey securitykey)
         {
-            return new SigningCredentials(securityKey,SecurityAlgorithms.HmacSha512Signature);
+            return new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha512Signature);
         }
     }
 }
