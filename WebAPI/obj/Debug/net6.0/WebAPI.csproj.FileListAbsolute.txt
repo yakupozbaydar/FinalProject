@@ -70,3 +70,5 @@ C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Autofac.Extensio
 C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
 C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\yakup\Projects\C#\FinalProject\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -17,5 +17,12 @@ namespace Business.Constants
         public static string ProductCountOfCategoryError="Bir kategoride en fazla 10 ürün olabilir.";
         internal static string ProductNameAlreadyExists = "Bu isimde bir ürün zaten var.";
         internal static string CategoryCountInvalid = "Kategori sayısı aşıldı(max 15)";
+        internal static string UserRegistered = "Kayıt oldu.";
+        internal static string UserNotFound = "Kullanıcı bulunamadı.";
+        internal static string PasswordError = "Şifre yanlış.";
+        internal static string SuccessfulLogin = "Başarılı giriş.";
+        internal static string UserAlreadyExists = "Kullanıcı zaten var.";
+        internal static string AccessTokenCreated = "Erişim tokenı oluşturuldu.";
+
     }
 }
