@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5JrCJeHQuG9EbZL4A8SnePBrI3jtXKYHDwnOEyotVtK6OCdiPZX0iIjZzwJhYRMbaWtDVW/CIJN0Dl6p5CJxpA==",
+  "dgSpecHash": "6NyAOrfcRFwRgbptHEBJMfrCG0eCLIm9RCZudE/qeumk3lfThSRP69zYEzVg1qL68QLI0M83yXsGtt0F6vO9Tg==",
   "success": true,
   "projectFilePath": "C:\\Users\\yakup\\Projects\\C#\\FinalProject\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yakup\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
+    "C:\\Users\\yakup\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\yakup\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\yakup\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\yakup\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",

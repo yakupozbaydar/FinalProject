@@ -23,7 +23,7 @@ namespace Business.BusinessAspects.Autofac
         {
             _roles = roles.Split(',');
             _httpContextAccessor = ServiceTool.ServiceProvider.GetService<IHttpContextAccessor>();
-
+            
         }
 
         protected override void OnBefore(IInvocation invocation)
@@ -35,8 +35,8 @@ namespace Business.BusinessAspects.Autofac
                 {
                     return;
                 }
-                else { throw new Exception(Messages.AuthorizationDenied); }
             }
+              throw new Exception(Messages.AuthorizationDenied); 
         }
     }
 }

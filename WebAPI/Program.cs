@@ -40,7 +40,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     ValidAudience = config.Audience,
 
     ValidateIssuerSigningKey = true,
-    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.SecurityKey))
+    IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(config.SecurityKey),
 });
 
 var app = builder.Build();
@@ -52,6 +52,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

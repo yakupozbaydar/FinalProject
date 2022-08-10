@@ -33,7 +33,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
         //claim
-        [SecuredOperation("admin")]
+        [SecuredOperation("admin,moderator")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
@@ -104,8 +104,8 @@ namespace Business.Concrete
         }
         private IResult CheckIfProductNameSame(string productName)
         {
-            var result = _productDal.Get(p => p.ProductName == productName).Equals(true);
-            if (result)
+            var result = _productDal.Get(p => p.ProductName == productName);
+            if (result != null)
             {
                 return new ErrorResult(Messages.ProductNameAlreadyExists);
             }
