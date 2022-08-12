@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.CrossCuttingCoıncerns.Validation
+namespace Core.CrossCuttingConcerns.Validation
 {
     //validation işlemini clean tutmak için
     //tek tool ile çalırılır validator(product validator) ve obje alcak(product)

@@ -75,3 +75,5 @@ C:\Users\yakup\Projects\C#\FinalProject\ConsoleUI\bin\Debug\net6.0\Microsoft.Asp
 C:\Users\yakup\Projects\C#\FinalProject\ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\yakup\Projects\C#\FinalProject\ConsoleUI\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\yakup\Projects\C#\FinalProject\ConsoleUI\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
+C:\Users\yakup\Projects\C#\FinalProject\ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\yakup\Projects\C#\FinalProject\ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
